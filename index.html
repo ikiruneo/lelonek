@@ -227,13 +227,17 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
         <div style="max-width:800px; display: flex; align-items: center; margin: 0 auto;">
             <div style="flex: 1; padding-right:20px; color: white;"> 
                 <p>IHR GESUNDHEITSPARTNER</p>
-                <h2>Ganzheitliche <i>Physiotherapie</i>
+                <h2 style="padding-bottom: 20px;">Ganzheitliche <i>Physiotherapie</i>
                     <br> vom <i>Experten</i> für Ihre <i>Gesundheit</i>
                 </h2>
-                <ul>
-                    <li>Langjährige Erfahrung in der Orthopädie</li>
-                    <li>Fokus auf Hausbesuche und Betreuung</li>
-                    <li>Begleitung mit Fachkompetenz und Empathie</li>
+                <img class="icon" src="icons/erfahrung.svg">
+                <p class="icon-text">Langjährige Erfahrung in der Orthopädie</p>
+                <hr style="border: 1px solid var(--s400);">
+                <img class="icon" src="icons/hausbesuche.svg">
+                    <p class="icon-text">Fokus auf Hausbesuche und Betreuung</p>
+                    <hr style="border: 1px solid var(--s400);">
+                    <img class="icon" src="icons/begleitung.svg">
+                    <p class="icon-text">Begleitung mit Fachkompetenz und Empathie</p>
                 </ul>
             </div>
             <div style="flex: 1;">
@@ -253,7 +257,7 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
       <p>Ich biete Ihnen professionelle Physiotherapie direkt in Ihrem Zuhause – individuell abgestimmt auf Ihre Bedürfnisse und Ziele, damit Sie aktiv am Alltag teilnehmen können. Entdecken Sie jetzt die Vorteile:</p>
     </cell>
     <cell span="8">
-      <imgsrc="pics/Bild_02.jpeg">
+      <img src="pics/Bild_02.jpeg">
     </cell>
     <cell span="4">
       <h2>Physiotherapie für <i>mehr Teilhabe</i>
@@ -309,12 +313,25 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
     <cell span="4">
       <img src="pics/Heimittelverornung.png">
     </cell>
-    <cell span="4" id="kontakt">
-      <h4>KONTAKTFORMULAR</h4>
+    
+    
+    
+    <cell span="8" id="kontakt">
+    <div class="full-width" style="padding: 20px 0;margin-top:0; margin-bottom:20px;back;background-color: var(--s50);">
+        <div style="max-width:800px; display: flex; align-items: center; margin: 0 auto;">
+            <div style="flex: 1; padding-right:20px; color: var(--s400);"> 
+                <h4>KONTAKTFORMULAR</h4>
       <h2>Treten Sie mit mir in <i>Kontakt</i>
       </h2>
       <p>Geben Sie Ihre Daten ein und lassen Sie uns ins Gespräch kommen. Gemeinsam finden wir die beste Lösung für Ihre individuellen Bedürfnisse.</p>
-    </cell>
+            </div>
+            <div style="flex: 1;color: var(--s400);">
+<p>test</p>
+            </div>
+        </div>
+    </div>
+</cell>
+  
     <cell span="8" class="right">
       <p>Copyright @ 2025 David Lelonek | <a href="#">Impressum</a> | <a href="#">Datenschutz</a>
       </p>
