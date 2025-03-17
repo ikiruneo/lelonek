@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
-    <style type="text/css">
+<style type="text/css">
     body {
 	    max-width:800px;
 	    margin:2em auto;
@@ -44,6 +44,24 @@ cell[span$="-7"],cell[span="8"]{--grid-b:8}
 cell[span]{grid-column-end:span var(--grid-b)}
 cell[span *="-"]{grid-column-start:var(--grid-a)}
 cell[span *="-"]{grid-column-end:var(--grid-b)}
+
+      /* --- Simplified Media Query --- */
+      @media (max-width: 600px) {
+        body {
+            grid-template-columns: repeat(8, 1fr); /*  Keep 8 columns */
+        }
+
+        /* Apply to ALL cells */
+        cell {
+            --grid-b: 8 !important;
+            grid-column-end: span var(--grid-b) !important;
+        }
+        cell[span *="-"]{
+            grid-column-start: 1 !important;
+        }
+      }
+      /* --- End of Simplified Media Query --- */
+
       :root {
         --p50: #f1f5f1;
         --p75: #c6d5c6;
@@ -102,18 +120,15 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
       letter-spacing: 2px;
       }
 
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: var(--s400);
-        letter-spacing: 2px;
-        font-size: 14px;
-        text-underline-offset: -3px;
-        text-decoration-skip-ink: none;
-        text-decoration:var(--a300) underline 6px;
-        -webkit-text-underline-offset: -3px;
-        -webkit-text-decoration-skip-ink: none;
-        -webkit-text-decoration:var(--a300) underline 6px;
+    a {
+      text-decoration: var(--a300) underline 6px;
+      text-underline-offset: -3px;
+      text-decoration-skip-ink: none; /* Standard property */
+      -webkit-text-decoration-skip-ink: none; /* WebKit prefix */
+      text-transform: uppercase;
+      color: var(--s400);
+      letter-spacing: 2px;
+      font-size: 14px;
       }
       
       img {
@@ -138,16 +153,22 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
         align-self: center;
       }
       
-      .icon {
+    /* --- Icon Styles (Flexbox) --- */
+    .icon {
         height: 20px;
         width: 20px;
-        float: left;
-        padding: 0px 8px 0px 0;
-      }
-      
-      .icon-text {
-        padding-left: 28px;
-      }
+        margin-right: 8px; /* Use margin for spacing */
+    }
+
+    .icon-text {
+      margin: 10px 0px;
+    }
+
+    .icon-container {
+      display: flex;
+      align-items: center; /* Vertical centering */
+    }
+    /* --- End Icon Styles --- */
       
       .bg {
         background-color: var(--s500);
@@ -190,9 +211,15 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
       }
       
 @media(max-width: 820px) {
-  .full-width > div { /* Target the inner div inside .full-width */
+  .full-width > div { 
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+
+@media(max-width: 600px) {
+  .hide { 
+    display:none;
   }
 }
 
@@ -207,7 +234,7 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
       </div>
     </cell>
     <cell span="8" class="right">
-      <a href="#hausbesuche">Hausbesuche</a>&numsp; <a href="#therapiestart">TherapieStart</a>
+      <a href="#hausbesuche">Hausbesuche</a>  <a href="#therapiestart">TherapieStart</a>
     </cell>
     <cell span="5">
       <h1 style="margin: 40px 0px 0px 0px;">Ihr Physiotherapeut für Hausbesuche <i>David Lelonek</i>
@@ -234,27 +261,29 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
         <div style="max-width:800px; display: flex; align-items: center; margin: 0 auto;">
             <div style="flex: 1; padding-right:20px; color: white;"> 
                 <p>IHR GESUNDHEITSPARTNER</p>
-                <h2 style="padding-bottom: 20px;">Ganzheitliche <i>Physiotherapie</i>
-                    <br> vom <i>Experten</i> für Ihre <i>Gesundheit</i>
+                <h2 style="padding-bottom: 20px;">Ganzheitliche <i>Physiotherapie</i> vom <i>Experten</i> für Ihre <i>Gesundheit</i>
                 </h2>
-                <img class="icon" src="icons/erfahrung.svg">
-                <p class="icon-text">Langjährige Erfahrung in der Orthopädie</p>
+                <div class="icon-container">
+                  <img class="icon" src="icons/erfahrung.svg">
+                  <p class="icon-text">Langjährige Erfahrung in der Orthopädie</p>
+                </div>
                 <hr style="border: 1px solid var(--s400);">
-                <img class="icon" src="icons/hausbesuche.svg">
-                    <p class="icon-text">Fokus auf Hausbesuche und Betreuung</p>
-                    <hr style="border: 1px solid var(--s400);">
-                    <img class="icon" src="icons/begleitung.svg">
-                    <p class="icon-text">Begleitung mit Fachkompetenz und Empathie</p>
-                </ul>
+                <div class="icon-container">
+                  <img class="icon" src="icons/hausbesuche.svg">
+                  <p class="icon-text">Fokus auf Hausbesuche und Betreuung</p>
+                </div>
+                <hr style="border: 1px solid var(--s400);">
+                <div class="icon-container">
+                  <img class="icon" src="icons/begleitung.svg">
+                  <p class="icon-text">Begleitung mit Fachkompetenz und Empathie</p>
+                </div>
             </div>
-            <div style="flex: 1;">
+            <div style="flex: 1;" class="hide">
                 <img src="pics/Bild_01.jpeg">
             </div>
         </div>
     </div>
 </cell>
-
-    
 
     <cell span="2-7" class="center" id="hausbesuche">
       <h4>HAUSBESUCHE</h4>
@@ -301,24 +330,32 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
       <h1>So starten Sie unkompliziert Ihre <i>Physiotherapie</i> vor <i>Ort</i>
       </h1>
       <p>Erfahren Sie, wie Sie Ihre Behandlung schnell und ohne lange Wartezeiten in nur wenigen Schritten starten können:</p><br>
-      <img class="icon" src="icons/rezept.svg">
-      <p>Rezept und Abwicklung</p>
+      <div class="icon-container">
+          <img class="icon" src="icons/rezept.svg">
+          <p class="icon-text">Rezept und Abwicklung</p>
+      </div>
       <p class="icon-text">Ihr Arzt stellt das Rezept aus. Überprüfen Sie die Daten sorgfältig und wenden Sie sich bei Fragen direkt an die Praxis. Dort erhalten Sie auch zudem wichtige Informationen und wertvolle Unterstützung.</p>
       <hr>
-      <img class="icon" src="icons/ersttermin.svg">
-      <p>Ersttermin und Planung</p>
+      <div class="icon-container">
+        <img class="icon" src="icons/ersttermin.svg">
+        <p class="icon-text">Ersttermin und Planung</p>
+      </div>
       <p class="icon-text">Vereinbaren Sie Ihren Termin telefonisch oder per E-Mail und bringen Sie ein gültiges Rezept spätestens zum ersten Termin mit, um einen reibungslosen Ablauf der Behandlung zu gewährleisten.</p>
       <hr>
-      <img class="icon" src="icons/kosten.svg">
-      <p>Kosten und Zuzahlung</p>
+      <div class="icon-container">
+          <img class="icon" src="icons/kosten.svg">
+          <p class="icon-text">Kosten und Zuzahlung</p>
+      </div> 
       <p class="icon-text">Versicherte, die gesetzlich versichert sind, zahlen pro Rezept eine Rezeptgebühr. Falls Sie von dieser Gebühr befreit sind, bringen Sie bitte den Befreiungsausweis zum ersten Termin unbedingt mit.</p>
       <hr>
-      <img class="icon" src="icons/anamnese.svg">
-      <p>Anamnese und Diagnose</p>
+      <div class="icon-container">
+        <img class="icon" src="icons/anamnese.svg">
+        <p class="icon-text">Anamnese und Diagnose</p>
+      </div>
       <p class="icon-text">Zu Beginn erfassen wir Ihre Beschwerden genau und definieren gemeinsam Ihre Therapieziele für eine gezielte, umfassende Behandlung vor Ort, die auf Ihre Bedürfnisse abgestimmt wird.</p>
     </cell>
     <cell span="4">
-      <img src="pics/Heimittelverornung.png">
+      <img src="pics/Heimittelverornung.png" style="max-width: 70vw;">
     </cell>
     
     
