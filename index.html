@@ -151,6 +151,10 @@ cell[span *="-"]{grid-column-end:var(--grid-b)}
         align-self: center;
       }
       
+      .highlight {
+        background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);
+      }
+      
     /* --- Icon Styles (Flexbox) --- */
     .icon {
         height: 20px;
@@ -231,7 +235,12 @@ a[href^="mailto"] {
     <cell span="8" class="center">
     <div class="full-width full-width-top" style="padding: 10px 0;">
     <div>
-      <p style="margin: 0;"><a href="tel:+4922039428155" style="text-decoration: white underline;text-underline-offset: 1px;color: white;letter-spacing: 0;">(02203) 942 8155</a> – auch via WhatsApp <a href="tel:+4917620793717" style="text-decoration: white underline;text-underline-offset: 1px;color: white;letter-spacing: 0;">+49 (0) 176 207 937 17</a> oder <a href="mailto:info@physio-lelonek.de" style="text-decoration: white underline;text-underline-offset: 1px;color: white;letter-spacing: 0;text-transform: none;">info@physio-lelonek.de</a></p>
+      <p style="margin: 0;">
+    <a href="tel:+4922039428155" style="text-decoration: underline; text-decoration-color: white; text-underline-offset: 1px; color: white; letter-spacing: 0;">(02203) 942 8155</a> – auch via WhatsApp 
+    <a href="tel:+4917620793717" style="text-decoration: underline; text-decoration-color: white; text-underline-offset: 1px; color: white; letter-spacing: 0;">+49 (0) 176 207 937 17</a> oder 
+    <a href="mailto:info@physio-lelonek.de" style="text-decoration: underline; text-decoration-color: white; text-underline-offset: 1px; color: white; letter-spacing: 0; text-transform: none;">info@physio-lelonek.de</a>
+</p>
+
       </div>
       </div>
     </cell>
@@ -290,7 +299,7 @@ a[href^="mailto"] {
 </cell>
 
     <cell span="2-7" class="center" id="hausbesuche">
-      <h4 style="background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);">HAUSBESUCHE</h4>
+      <h4><span class="highlight">HAUSBESUCHE</span></h4>
       <h1>Professionelle <i>Physiotherapie</i>
         <br>bei <i>Ihnen</i> zu <i>Hause</i>
       </h1>
@@ -330,7 +339,7 @@ a[href^="mailto"] {
       </div>
     </cell>
     <cell span="2-7" id="therapiestart" class="center">
-      <h4 style="background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);">THERAPIESTART</h4>
+      <h4><span class="highlight">THERAPIESTART</span></h4>
       <h1>So starten Sie unkompliziert Ihre <i>Physiotherapie</i> vor <i>Ort</i>
       </h1>
       <p>Erfahren Sie, wie Sie Ihre Behandlung schnell und ohne lange Wartezeiten in nur wenigen Schritten starten können:</p><br>
@@ -340,25 +349,25 @@ a[href^="mailto"] {
           <img class="icon" src="icons/rezept.svg">
           <p class="icon-text">Rezept und Abwicklung</p>
       </div>
-      <p class="icon-text">Ihr Arzt stellt das Rezept aus. Überprüfen Sie die Daten sorgfältig und wenden Sie sich bei Fragen direkt an die Praxis. Dort erhalten Sie auch zudem wichtige Informationen und wertvolle Unterstützung.</p>
+      <p class="icon-text" style="padding-left: 30px;">Ihr Arzt stellt das Rezept aus. Überprüfen Sie die Daten sorgfältig und wenden Sie sich bei Fragen direkt an die Praxis. Dort erhalten Sie auch zudem wichtige Informationen und wertvolle Unterstützung.</p>
       <hr>
       <div class="icon-container">
         <img class="icon" src="icons/ersttermin.svg">
         <p class="icon-text">Ersttermin und Planung</p>
       </div>
-      <p class="icon-text">Vereinbaren Sie Ihren Termin telefonisch oder per E-Mail und bringen Sie ein gültiges Rezept spätestens zum ersten Termin mit, um einen reibungslosen Ablauf der Behandlung zu gewährleisten.</p>
+      <p class="icon-text" style="padding-left: 30px;">Vereinbaren Sie Ihren Termin telefonisch oder per E-Mail und bringen Sie ein gültiges Rezept spätestens zum ersten Termin mit, um einen reibungslosen Ablauf der Behandlung zu gewährleisten.</p>
       <hr>
       <div class="icon-container">
           <img class="icon" src="icons/kosten.svg">
           <p class="icon-text">Kosten und Zuzahlung</p>
       </div> 
-      <p class="icon-text">Versicherte, die gesetzlich versichert sind, zahlen pro Rezept eine Rezeptgebühr. Falls Sie von dieser Gebühr befreit sind, bringen Sie bitte den Befreiungsausweis zum ersten Termin unbedingt mit.</p>
+      <p class="icon-text" style="padding-left: 30px;">Versicherte, die gesetzlich versichert sind, zahlen pro Rezept eine Rezeptgebühr. Falls Sie von dieser Gebühr befreit sind, bringen Sie bitte den Befreiungsausweis zum ersten Termin unbedingt mit.</p>
       <hr>
       <div class="icon-container">
         <img class="icon" src="icons/anamnese.svg">
         <p class="icon-text">Anamnese und Diagnose</p>
       </div>
-      <p class="icon-text">Zu Beginn erfassen wir Ihre Beschwerden genau und definieren gemeinsam Ihre Therapieziele für eine gezielte, umfassende Behandlung vor Ort, die auf Ihre Bedürfnisse abgestimmt wird.</p>
+      <p class="icon-text" style="padding-left: 30px;">Zu Beginn erfassen wir Ihre Beschwerden genau und definieren gemeinsam Ihre Therapieziele für eine gezielte, umfassende Behandlung vor Ort, die auf Ihre Bedürfnisse abgestimmt wird.</p>
     </cell>
     <cell span="4">
       <img src="pics/Bild_08.jpg">
@@ -370,7 +379,7 @@ a[href^="mailto"] {
     <div class="full-width" style="padding: 20px 0;margin-top:0; margin-bottom:20px;back;background-color: var(--s50);">
         <div style="max-width:800px; display: flex; align-items: center; margin: 0 auto;">
             <div style="flex: 1; padding-right:20px; color: var(--s400);"> 
-                <h4 style="background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);">KONTAKTFORMULAR</h4>
+                <h4><span class="highlight">KONTAKTFORMULAR</span></h4>
       <h2>Treten Sie mit mir in <i>Kontakt</i>
       </h2>
       <p>Geben Sie Ihre Daten ein und lassen Sie uns ins Gespräch kommen. Gemeinsam finden wir die beste Lösung für Ihre individuellen Bedürfnisse.</p>
@@ -383,7 +392,7 @@ a[href^="mailto"] {
 </cell>
   
     <cell span="8" class="right">
-      <p>Copyright @ 2025 David Lelonek | <a href="#" style="background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);">Impressum</a> | <a href="#" style="background:linear-gradient(180deg, transparent 60%, var(--a300) 60%);">Datenschutz</a>
+      <p>Copyright @ 2025 David Lelonek | <a href="#"><span class="highlight">Impressum</span></a> | <a href="#"><span class="highlight">Datenschutz</span></a>
       </p>
     </cell>
   </body>
